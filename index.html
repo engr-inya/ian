@@ -58,12 +58,25 @@
             background-color: #181818;
             text-align: center;
             margin-bottom: 150px;
+            opacity: 0;
+            animation: slideIn 1s ease-in-out forwards;
         }
         .hero h1 {
             font-size: 56px;
-            transition: opacity 0.5s;
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
             margin-bottom: 30px;
             color: #3498db;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         .container {
             max-width: 900px;
@@ -279,6 +292,26 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Text transition for homepage
+        document.addEventListener("DOMContentLoaded", function() {
+            let texts = ["Hi! I'm Ian Santos", "Welcome to my Website"];
+            let index = 0;
+            let heading = document.querySelector(".hero h1");
+
+            function changeText() {
+                heading.textContent = texts[index];
+                heading.style.transform = 'translateY(50px)';
+                heading.style.opacity = 0;
+                setTimeout(() => {
+                    heading.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+                    heading.style.transform = 'translateY(0)';
+                    heading.style.opacity = 1;
+                }, 200);
+                index = (index + 1) % texts.length;
+            }
+            setInterval(changeText, 3000); // Change text every 3 seconds
         });
     </script>
 </body>
