@@ -197,29 +197,7 @@
                 font-size: 18px;
             }
         }
-
-        /* Scroll padding to avoid nav bar cover issue */
-        body {
-            scroll-padding-top: 70px; /* Add enough padding to top */
-        }
-        section {
-            scroll-margin-top: 70px; /* Add margin-top for sections */
-        }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let texts = ["Hi! I'm Ian Santos", "Welcome to my Website"];
-            let index = 0;
-            let heading = document.querySelector(".hero h1");
-
-            function changeText() {
-                heading.textContent = texts[index];
-                index = (index + 1) % texts.length;
-                setTimeout(changeText, 2000);
-            }
-            changeText();
-        });
-    </script>
 </head>
 <body>
     <header>
@@ -287,5 +265,21 @@
             <a href="https://x.com/inyasnts" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
+
+    <script>
+        // Adding scroll offset for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
