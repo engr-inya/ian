@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ian Santos</title>
+    <title>My Personal Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
@@ -13,14 +13,15 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
-            line-height: 1.8; /* Increased line height for better readability */
+            line-height: 1.8;
         }
         body {
-            background-color: #181818;
-            color: #fff;
+            background-color: #121212;
+            color: #e0e0e0;
+            padding-top: 70px; /* Add padding to top for body */
         }
         header {
-            background: #222;
+            background: #1c1c1c;
             padding: 20px;
             font-size: 24px;
             font-weight: 600;
@@ -32,21 +33,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 50px; /* Increased padding for more spacing */
+            padding: 30px 50px;
         }
         nav {
             display: flex;
-            gap: 30px; /* Increased gap between navigation items */
+            gap: 30px;
         }
         nav a {
-            color: white;
+            color: #3498db;
             text-decoration: none;
             font-size: 18px;
             transition: 0.3s;
         }
         nav a:hover {
-            color: #ff6b6b;
-            transform: scale(1.1); /* Added scale effect on hover */
+            color: #1abc9c;
+            transform: scale(1.1);
         }
         .hero {
             height: 100vh;
@@ -54,48 +55,38 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to bottom, #222, #181818);
+            background-color: #181818;
             text-align: center;
-            padding-top: 100px; /* Increased padding to create space from the top */
-            margin-bottom: 150px; /* Added margin for more space between sections */
-            position: relative;
-            animation: backgroundAnimation 10s infinite alternate; /* Added background animation */
+            margin-bottom: 150px;
         }
         .hero h1 {
             font-size: 56px;
             transition: opacity 0.5s;
-            margin-bottom: 30px; /* Added space between heading and image */
-        }
-        @keyframes backgroundAnimation {
-            0% {
-                background: linear-gradient(to bottom, #222, #181818);
-            }
-            100% {
-                background: linear-gradient(to bottom, #333, #222);
-            }
+            margin-bottom: 30px;
+            color: #3498db;
         }
         .container {
             max-width: 900px;
             margin: 150px auto;
             padding: 80px;
-            background: #222;
+            background: #1c1c1c;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 100px; /* Increased gap between sections */
+            gap: 100px;
         }
         section {
             text-align: left;
-            padding-bottom: 70px; /* Increased padding for more spacing at the bottom of each section */
-            margin-bottom: 50px; /* Added margin for space between sections */
-            padding-top: 80px; /* Add padding to offset the fixed header */
+            padding-bottom: 70px;
+            margin-bottom: 50px;
+            padding-top: 80px;
         }
         .skills {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px; /* Increased gap between skills */
+            gap: 40px;
         }
         .skill {
             width: 80%;
@@ -103,34 +94,35 @@
         }
         .progress-bar {
             background: #333;
-            height: 12px; /* Slightly increased height for better visibility */
+            height: 12px;
             border-radius: 5px;
-            margin-top: 10px; /* Added more space above the progress bars */
+            margin-top: 10px;
             overflow: hidden;
         }
         .progress {
             height: 100%;
-            background: #ff6b6b;
+            background: #3498db;
             width: 0;
             transition: width 1s ease-in-out;
         }
         footer {
             margin-top: 150px;
             padding: 30px;
-            background: #222;
-            font-size: 16px; /* Slightly increased font size */
+            background: #1c1c1c;
+            font-size: 16px;
             opacity: 0.8;
             text-align: center;
         }
         .social-links a {
-            color: #ff6b6b;
+            color: #3498db;
             text-decoration: none;
-            margin: 0 15px; /* Increased margin for more space between social icons */
-            font-size: 24px; /* Increased font size for better visibility */
+            margin: 0 15px;
+            font-size: 24px;
             transition: 0.3s;
         }
         .social-links a:hover {
-            transform: scale(1.2); /* Added scale effect for social icons */
+            transform: scale(1.2);
+            color: #1abc9c;
         }
 
         /* Responsive Design */
@@ -205,13 +197,18 @@
                 font-size: 18px;
             }
         }
+
+        /* Scroll padding to avoid nav bar cover issue */
+        body {
+            scroll-padding-top: 70px; /* Add enough padding to top */
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let texts = ["Hi! I'm Ian Santos", "Welcome to my Website"];
             let index = 0;
             let heading = document.querySelector(".hero h1");
-            
+
             function changeText() {
                 heading.textContent = texts[index];
                 index = (index + 1) % texts.length;
@@ -259,11 +256,11 @@
                 </div>
                 <div class="skill">
                     <p class="skill-name">JavaScript</p>
-                    <div class="progress-bar"><div class="progress" style="width: 15%;"></div></div>
+                    <div class="progress-bar"><div class="progress" style="width: 5%;"></div></div>
                 </div>
                 <div class="skill">
                     <p class="skill-name">Python</p>
-                    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                    <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
                 </div>
                 <div class="skill">
                     <p class="skill-name">C++</p>
@@ -274,7 +271,7 @@
         
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:your.iansantospa@gmail.com">iansantospa@gmail.com</a></p>
+            <p>Email: <a href="mailto:iansantospa@gmail.com">iansantospa@gmail.com</a></p>
             <p>Phone: +63 976 570 3485</p>
         </section>
     </div>
