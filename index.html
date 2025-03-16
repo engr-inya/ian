@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #181818;
+            color: #fff;
+        }
+        header {
+            background: #222;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #ff6b6b;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #222, #181818);
+            text-align: center;
+            padding-top: 80px;
+            margin-bottom: 100px;
+        }
+        .hero h1 {
+            font-size: 56px;
+            transition: opacity 0.5s;
+        }
+        .container {
+            max-width: 900px;
+            margin: 150px auto;
+            padding: 60px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        section {
+            text-align: left;
+            padding-bottom: 50px;
+        }
+        .skills {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .skill {
+            width: 80%;
+            text-align: left;
+        }
+        .progress-bar {
+            background: #333;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #ff6b6b;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        footer {
+            margin-top: 150px;
+            padding: 20px;
+            background: #222;
+            font-size: 14px;
+            opacity: 0.8;
+            text-align: center;
+        }
+        .social-links a {
+            color: #ff6b6b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let texts = ["Hi! I'm Ian Santos", "Welcome to my Website"];
+            let index = 0;
+            let heading = document.querySelector(".hero h1");
+            
+            function changeText() {
+                heading.textContent = texts[index];
+                index = (index + 1) % texts.length;
+                setTimeout(changeText, 2000);
+            }
+            changeText();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <img src="me.jpeg" alt="Ian Santos" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
+        <h1>Hi! I'm Ian Santos</h1>
+    </section>
+    
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Karol Ian M. Santos</p>
+            <p><strong>Age:</strong> 19</p>
+            <p><strong>Birthdate:</strong> November 14, 2005</p>
+            <p><strong>Location:</strong> Rizal, Philippines</p>
+            <p><strong>School:</strong> University of Rizal System - Morong</p>
+            <p><strong>Course:</strong> BS Computer Engineering</p>
+            <p><strong>Hobbies:</strong> Coding, Gaming</p>
+            <p><strong>Interests:</strong> Software Development</p>
+        </section>
+        
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <p class="skill-name">HTML & CSS</p>
+                    <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p class="skill-name">JavaScript</p>
+                    <div class="progress-bar"><div class="progress" style="width: 5%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p class="skill-name">Python</p>
+                    <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p class="skill-name">C++</p>
+                    <div class="progress-bar"><div class="progress" style="width: 5%;"></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:your.iansantospa@gmail.com">iansantospa@gmail.com</a></p>
+            <p>Phone: +63 976 570 3485</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Ian Santos. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/krlnsnts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/i_nsnts" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/inyasnts" target="_blank"><i class="fab fa-twitter"></i></a>
+    </footer>
+</body>
+</html>
