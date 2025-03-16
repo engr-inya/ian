@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Ian Santos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
@@ -13,13 +13,14 @@
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            line-height: 1.8; /* Increased line height for better readability */
         }
         body {
-            background-color: #181818;
-            color: #fff;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light gray text for better contrast */
         }
         header {
-            background: #222;
+            background: #1c1c1c; /* Darker gray background for header */
             padding: 20px;
             font-size: 24px;
             font-weight: 600;
@@ -31,20 +32,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 30px 50px;
         }
         nav {
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
         nav a {
-            color: white;
+            color: #3498db; /* Blue color */
             text-decoration: none;
             font-size: 18px;
             transition: 0.3s;
         }
         nav a:hover {
-            color: #ff6b6b;
+            color: #1abc9c; /* Light cyan for hover */
+            transform: scale(1.1);
         }
         .hero {
             height: 100vh;
@@ -52,35 +54,39 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(to bottom, #222, #181818);
+            background-color: #181818; /* Dark gray background */
             text-align: center;
-            padding-top: 80px;
-            margin-bottom: 100px;
+            padding-top: 100px;
+            margin-bottom: 150px;
         }
         .hero h1 {
             font-size: 56px;
             transition: opacity 0.5s;
+            margin-bottom: 30px;
+            color: #3498db; /* Blue text */
         }
         .container {
             max-width: 900px;
             margin: 150px auto;
-            padding: 60px;
-            background: #222;
+            padding: 80px;
+            background: #1c1c1c; /* Dark gray for container */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 80px;
+            gap: 100px;
         }
         section {
             text-align: left;
-            padding-bottom: 50px;
+            padding-bottom: 70px;
+            margin-bottom: 50px;
+            padding-top: 80px;
         }
         .skills {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 40px;
         }
         .skill {
             width: 80%;
@@ -88,30 +94,108 @@
         }
         .progress-bar {
             background: #333;
-            height: 10px;
+            height: 12px;
             border-radius: 5px;
-            margin-top: 5px;
+            margin-top: 10px;
             overflow: hidden;
         }
         .progress {
             height: 100%;
-            background: #ff6b6b;
+            background: #3498db; /* Blue progress bar */
             width: 0;
             transition: width 1s ease-in-out;
         }
         footer {
             margin-top: 150px;
-            padding: 20px;
-            background: #222;
-            font-size: 14px;
+            padding: 30px;
+            background: #1c1c1c;
+            font-size: 16px;
             opacity: 0.8;
             text-align: center;
         }
         .social-links a {
-            color: #ff6b6b;
+            color: #3498db;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 20px;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: #1abc9c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            header {
+                padding: 20px 30px;
+            }
+            nav {
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 48px;
+            }
+            .container {
+                padding: 60px;
+            }
+            .skills {
+                gap: 30px;
+            }
+            .skill {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero img {
+                width: 150px;
+                height: 150px;
+            }
+            .container {
+                padding: 40px;
+            }
+            .skills {
+                gap: 20px;
+            }
+            .social-links a {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
+            .container {
+                padding: 30px;
+            }
+            .social-links a {
+                font-size: 18px;
+            }
         }
     </style>
     <script>
@@ -119,7 +203,7 @@
             let texts = ["Hi! I'm Ian Santos", "Welcome to my Website"];
             let index = 0;
             let heading = document.querySelector(".hero h1");
-            
+
             function changeText() {
                 heading.textContent = texts[index];
                 index = (index + 1) % texts.length;
@@ -141,7 +225,7 @@
     </header>
     
     <section id="home" class="hero">
-        <img src="me.jpeg" alt="Ian Santos" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
+        <img src="me.jpeg" alt="Ian Santos" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 30px;">
         <h1>Hi! I'm Ian Santos</h1>
     </section>
     
@@ -167,11 +251,11 @@
                 </div>
                 <div class="skill">
                     <p class="skill-name">JavaScript</p>
-                    <div class="progress-bar"><div class="progress" style="width: 5%;"></div></div>
+                    <div class="progress-bar"><div class="progress" style="width: 15%;"></div></div>
                 </div>
                 <div class="skill">
                     <p class="skill-name">Python</p>
-                    <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
                 </div>
                 <div class="skill">
                     <p class="skill-name">C++</p>
@@ -182,7 +266,7 @@
         
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:your.iansantospa@gmail.com">iansantospa@gmail.com</a></p>
+            <p>Email: <a href="mailto:iansantospa@gmail.com">iansantospa@gmail.com</a></p>
             <p>Phone: +63 976 570 3485</p>
         </section>
     </div>
@@ -193,6 +277,7 @@
             <a href="https://www.facebook.com/krlnsnts" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/i_nsnts" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://x.com/inyasnts" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 </body>
 </html>
