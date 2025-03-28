@@ -670,6 +670,8 @@ h3.my-profession
     .aside .nav-toggler
     {
         display: flex;
+        justify-content: center;
+        z-index: 11;
     }
 }
 
@@ -710,6 +712,13 @@ h3.my-profession
     {
         flex: 0 0 100%;
         max-width: 100%;
+        margin-top: 20px;
+    }
+    .about .about-content .personal-info .info-item p span
+    {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
     }
     .section
     {
