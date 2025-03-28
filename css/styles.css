@@ -667,6 +667,10 @@ h3.my-profession
         display: block;
         margin-left: 0;
     }
+    .aside .nav-toggler
+    {
+        display: flex;
+    }
 }
 
 @media (max-width: 991px)
@@ -687,6 +691,13 @@ h3.my-profession
     {
         display: none;
     }
+    .section-title h2
+    {
+        font-size: 35px;
+    }
+    .social-links a i {
+        font-size: 40px;
+    }
 }
 
 @media (max-width: 767px)
@@ -699,6 +710,48 @@ h3.my-profession
     {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .section
+    {
+        padding: 0 15px;
+    }
+    h3.hello
+    {
+        font-size: 24px;
+    }
+    h3.my-profession
+    {
+        font-size: 26px;
+    }
+    .home-info p
+    {
+        font-size: 16px;
+    }
+    .section-title h2
+    {
+        font-size: 30px;
+    }
+    .social-links a i {
+        font-size: 35px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .contact .contact-info-item
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .btn
+    {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    .home-info p
+    {
+        font-size: 15px;
     }
 }
 
