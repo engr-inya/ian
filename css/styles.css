@@ -49,16 +49,44 @@ ul
     display: block;
     padding: 0 30px;
     opacity: 1;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.section.back-section
+{
+    z-index: 1;
+}
+
+.section.active
+{
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
+}
+
+@keyframes slideSection
+{
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
 }
 
 .hidden
 {
     display: none !important;
-}
-
-.main-content
-{
-    padding-left: 270px;
 }
 
 .padd-15
@@ -161,6 +189,7 @@ ul
     justify-content: center;
     align-items: center;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .aside .logo
@@ -224,6 +253,8 @@ ul
     background: var(--bg-black-100);
     display: none;
     align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .aside .nav-toggler span
@@ -233,6 +264,11 @@ ul
     background: var(--skin-color);
     display: inline-block;
     position: relative;
+}
+
+.aside .nav-toggler.open span
+{
+    background-color: transparent;
 }
 
 .aside .nav-toggler span::before
@@ -246,6 +282,12 @@ ul
     left: 0;
 }
 
+.aside .nav-toggler.open span::before
+{
+    transform: rotate(45deg);
+    top: 0;
+}
+
 .aside .nav-toggler span::after
 {
     content: '';
@@ -255,6 +297,12 @@ ul
     position: absolute;
     top: 6px;
     left: 0;
+}
+
+.aside .nav-toggler.open span::after
+{
+    transform: rotate(-45deg);
+    top: 0;
 }
 
 .aside .nav
@@ -374,7 +422,8 @@ h3.my-profession
     margin-top: 50px;
 }
 
-.social-links a i {
+.social-links a i 
+{
     color: var(--text-black-900);
     font-size: 50px;
     transition: all 0.3s ease;
@@ -383,7 +432,19 @@ h3.my-profession
     margin: 0 20px;
 }
 
-.social-links a:hover {
+.text-link h3
+{
+    color: var(--text-black-900);
+    font-size: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    top: -40px;
+    margin: 0 20px;
+    margin-top: 10px;
+}
+
+.social-links a:hover 
+{
     transform: scale(1.2);
     filter: drop-shadow(0 0 15px var(--skin-color));
 }
@@ -459,7 +520,6 @@ h3.my-profession
 
 .about .about-content .personal-info .buttons .btn
 {
-    margin-right: 15px;
     margin-top: 10px;
 }
 
@@ -652,15 +712,23 @@ h3.my-profession
     padding: 0 50px;
 }
 
-@media (max-width: 1199px)
+@media (max-width: 1400px)
 {
+    .section .container
+    {
+        padding-top: 70px;
+    }
     .aside
     {
         left: -270px;
     }
-    .main-content
+    .aside.open
     {
-        padding-left: 0;
+        left: 0;
+    }
+    .aside .nav-toggler.open
+    {
+        left: 300px;
     }
     .about .about-content .personal-info .info-item p span
     {
@@ -670,8 +738,19 @@ h3.my-profession
     .aside .nav-toggler
     {
         display: flex;
-        justify-content: center;
-        z-index: 11;
+        left: 30px;
+    }
+    .aside .nav-toggler.aside.open
+    {
+        left: 300px;
+    }
+    .section
+    {
+        left: 0;
+    }
+    .section.open
+    {
+        left: 270px;
     }
 }
 
@@ -712,13 +791,6 @@ h3.my-profession
     {
         flex: 0 0 100%;
         max-width: 100%;
-        margin-top: 20px;
-    }
-    .about .about-content .personal-info .info-item p span
-    {
-        display: block;
-        margin-left: 0;
-        margin-top: 5px;
     }
     .section
     {
