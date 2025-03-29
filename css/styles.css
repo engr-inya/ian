@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
 :root
 {
     --bg-black-900:#f2f2fc;
@@ -358,7 +358,7 @@ h3.hello
 
 h3.hello span
 {
-    font-family: 'Clicker Script', cursive;
+    font-family: 'Pacifico', cursive;
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
@@ -591,6 +591,13 @@ h3.my-profession
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
     margin-bottom: 30px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.hobbies .hobbies-item:hover
+{
+    transform: translateY(-10px);
 }
 
 .hobbies .hobbies-item-inner
@@ -599,12 +606,27 @@ h3.my-profession
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.hobbies .hobbies-item-inner:hover
+{
+    border-color: var(--skin-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .hobbies .hobbies-item-inner .hobbies-img img
 {
     width: 100%;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.hobbies .hobbies-item-inner:hover .hobbies-img img
+{
+    transform: scale(1.1);
 }
 
 /* contact */
